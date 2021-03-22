@@ -1,10 +1,13 @@
-import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import Menu from "./features/Menu";
+import Routes from "./Routes/Routes";
 
 const App = () => {
   return (
-    <div className="App">
-      Hello
-    </div>
+    <Router>
+      <Menu />
+      <Routes />
+    </Router>
   );
 };
 
