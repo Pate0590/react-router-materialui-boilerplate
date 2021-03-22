@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <HideOnScroll>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="transparent" className={classes.appBar}>
         <Toolbar component="nav">
           <Container maxWidth="md" className={classes.navbarDisplayFlex}>
             <IconButton edge="start" aria-label="home">
@@ -37,7 +37,7 @@ const Header = () => {
                 {navLinks.map(({ title, path }) => (
                   <a href={path} key={title} className={classes.linkText}>
                     <ListItem button>
-                      <ListItemText primary={title} />
+                      <ListItemText primary={title} className={classes.text} />
                     </ListItem>
                   </a>
                 ))}

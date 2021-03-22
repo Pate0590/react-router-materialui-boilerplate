@@ -1,5 +1,9 @@
+import useStyles from "./styles";
+
 const Home = () => {
-  return <div>Home</div>;
+  const classes = useStyles({ height: window.innerHeight });
+
+  return <div className={classes.home}></div>;
 };
 
 export default Home;

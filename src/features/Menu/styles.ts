@@ -1,8 +1,12 @@
 import { makeStyles } from "@material-ui/core";
 
 export default makeStyles({
+  appBar: {
+    boxShadow: "none",
+  },
   navbarDisplayFlex: {
     display: `flex`,
+    padding: 0,
     justifyContent: `space-between`,
   },
   navListDisplayFlex: {
@@ -13,5 +17,9 @@ export default makeStyles({
     textDecoration: `none`,
     textTransform: `uppercase`,
     color: `white`,
+  },
+  text: {
+    fontWeight: 600,
+    letterSpacing: 1,
   },
 });
