@@ -1,53 +1,56 @@
-# Getting Started with Create React App
+# Working with the React UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This file explains how to work with the React-based website.
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+The [React-based](https://reactjs.org/) website was bootstrapped using [Create React App](https://github.com/facebook/create-react-app), a popular toolkit for generating React application setups. You can find general information about Create React App on [their documentation site](https://create-react-app.dev/).
 
-### `yarn start`
+Instead of plain JavaScript, I use [TypeScript](https://www.typescriptlang.org/) to ensure typed code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Development environment
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To work with the React UI code, you will need to have the following tools installed:
 
-### `yarn test`
+* The [Node.js](https://nodejs.org/) JavaScript runtime.
+* The [Yarn](https://yarnpkg.com/) package manager.
+* *Recommended:* An editor with TypeScript, React, and [ESLint](https://eslint.org/) linting support. See e.g. [Create React App's editor setup instructions](https://create-react-app.dev/docs/setting-up-your-editor/). If you are not sure which editor to use, we recommend using [Visual Studio Code](https://code.visualstudio.com/docs/languages/typescript). Make sure that [the editor uses the project's TypeScript version rather than its own](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installing npm dependencies
 
-### `yarn lint`
+The React UI depends on a large number of [npm](https://www.npmjs.com/) packages. These are not checked in, so you will need to download and install them locally via the Yarn package manager:
 
-We define linting rules for the ESLint linter. We recommend integrating automated linting and fixing into your editor (e.g. upon save), but you can also run the linter separately from the command-line.
+    yarn
 
-To detect and automatically fix lint errors, run `yarn lint`
+Yarn consults the `package.json` and `yarn.lock` files for dependencies to install. It creates a `node_modules` directory with all installed dependencies.
 
 
-### `yarn build`
+## Running a local development server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can start a development server for the React UI outside of a running Prometheus server by running:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    yarn start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This will open a browser window with the React app running on http://localhost:3000/. The page will reload if you make edits to the source code. You will also see any lint errors in the console.
 
-### `yarn eject`
+## Running tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Create React App uses the [Jest](https://jestjs.io/) and React Testing Library framework for running tests. To run tests in interactive watch mode:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    yarn test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Linting
 
-## Learn More
+We define linting rules for the [ESLint](https://eslint.org/) linter. We recommend integrating automated linting and fixing into your editor (e.g. upon save), but you can also run the linter separately from the command-line.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To detect and automatically fix lint errors, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    yarn lint
+
+
+## Building the app for production
+
+To build a production-optimized version of the React app to a `build` subdirectory, run:
+
+    yarn build
